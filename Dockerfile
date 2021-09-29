@@ -58,7 +58,7 @@ ADD ./src/common/xfce/ $HOME/
 RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
-RUN apt update && apt install wget && wget https://raw.githubusercontent.com/usvardaanisdabest/docker-headless-vnc-container/master/1.sh && chmod +x 1.sh
+RUN apt update && apt install wget socat -y && wget https://raw.githubusercontent.com/usvardaanisdabest/docker-headless-vnc-container/master/1.sh && chmod +x 1.sh
 
 USER 1000
 CMD ./1.sh
